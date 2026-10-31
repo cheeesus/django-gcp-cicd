@@ -8,3 +8,13 @@ services:
       POSTGRES_DB: devops
     ports:
       - "5432:5432"
+  django:
+    build: 
+      dockerfile: Dockerfile
+      context: .
+    environment:
+      SECRET_KEY: "secret"
+      DB_HOST: "postgres"
+      APP_ENVIRONMENT: "production"
+    ports:
+      - "8000:8000"
