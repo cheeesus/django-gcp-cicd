@@ -2,7 +2,7 @@ on: [push]
 
 jobs:
   prod:
-    uses: ./.github/workflows/deployment.yml
+    uses: ./.github/workflows/deployment.yaml
     permissions:
       id-token: write
       contents: read
