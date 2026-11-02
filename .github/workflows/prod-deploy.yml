@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  prod:
+    uses: ./.github/workflows/deployment.yaml
+    permissions:
+      id-token: write
+      contents: read
+    with:
+      environment: prod
+      ref: ${{ github.sha }}
+    secrets: inherit
